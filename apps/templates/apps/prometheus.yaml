@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/prometheus-community/helm-charts
     targetRevision: main
-    path: charts/kube-prometheus-stack/charts/crds/crds
+    path: charts/prometheus-operator-crds
 
   destination:
     server: https://kubernetes.default.svc
