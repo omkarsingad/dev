@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/prometheus-operator/prometheus-operator
+    repoURL: https://github.com/prometheus-community/helm-charts
     targetRevision: main
-    path: example/prometheus-operator-crd
+    path: charts/kube-prometheus-stack/charts/crds/crds
 
   destination:
     server: https://kubernetes.default.svc
