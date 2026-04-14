@@ -5,16 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/prometheus-operator/prometheus-operator
-    path: example/prometheus-operator-crd
-    targetRevision: v0.90.1   # pin version (IMPORTANT)
-
+    repoURL: https://prometheus-community.github.io/helm-charts  # Helm repo [web:21]
+    chart: prometheus-operator-crds
+    targetRevision: "28.0.1"  # Latest minimal bundle
+    helm:
+      releaseName: prometheus-operator-crds
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
-
   syncPolicy:
     automated:
       prune: false
