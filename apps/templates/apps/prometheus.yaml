@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds
     chart: prometheus-operator-crds
-    targetRevision: 1.3.0   # pin version (IMPORTANT)
+    targetRevision: 26.0.1   # pin version (IMPORTANT)
 
   destination:
     server: https://kubernetes.default.svc
