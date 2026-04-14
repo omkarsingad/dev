@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://prometheus-community.github.io/helm-charts  # Helm repo [web:21]
-    chart: prometheus-operator-crds/charts
+    chart: prometheus-operator-crds
     targetRevision: "28.0.1"  # Latest minimal bundle
     helm:
       releaseName: prometheus-operator-crds
