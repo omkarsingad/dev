@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/grafana-operator/grafana-operator
+    repoURL: https://github.com/grafana/grafana-operator.git
     targetRevision: master
-    path: deploy/crds
+    path: deploy/helm/grafana-operator/files/crds
     
   destination:
     server: https://kubernetes.default.svc
