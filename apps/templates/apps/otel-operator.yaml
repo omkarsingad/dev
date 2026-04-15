@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/open-telemetry/opentelemetry-operator.git
-    targetRevision: v0.148.0
+    targetRevision: v0.147.0
     path: config/default
 
   destination:
