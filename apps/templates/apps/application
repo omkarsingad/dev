@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appfortelemetry
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/omkarsingad/modules.git
+    targetRevision: main
+    path: apps/appfortelemetry  # Your folder
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: observability    # Your NS
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
