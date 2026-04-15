@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/grafana-operator/grafana-operator
-    targetRevision: main
+    targetRevision: master
     path: deploy/crds
     
   destination:
