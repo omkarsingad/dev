@@ -3,19 +3,17 @@ kind: Application
 metadata:
   name: otel-operator
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
 
   source:
     repoURL: https://github.com/open-telemetry/opentelemetry-operator.git
-    targetRevision: v0.147.0
+    targetRevision: v0.148.0
     path: config/default
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: otel
+    namespace: opentelemetry-operator-system
 
   syncPolicy:
     automated:
@@ -24,3 +22,4 @@ spec:
 
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
