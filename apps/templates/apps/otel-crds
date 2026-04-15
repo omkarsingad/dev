@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/open-telemetry/opentelemetry-operator.git
-    targetRevision: HEAD
+    targetRevision: v0.148.0
     path: config/crd/bases
     directory:
       include: |
