@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/omkarsingad/modules.git     # ← Plain URL
+    repoURL: https://github.com/omkarsingad/modules.git     
     targetRevision: main
     path: apps/appfortelemetry
   destination:
-    server: https://kubernetes.default.svc                  # ← Plain URL
+    server: https://kubernetes.default.svc                  
     namespace: observability
   syncPolicy:
     automated:
