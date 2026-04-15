@@ -9,8 +9,8 @@ spec:
   source:
     repoURL: https://github.com/grafana-operator/grafana-operator
     targetRevision: main
-    path: deploy/helm/grafana-operator/files/crds
-
+    path: deploy/crds
+    
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
