@@ -1,0 +1,80 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mimir
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://grafana.github.io/helm-charts
+    chart: mimir-distributed
+    targetRevision: "5.5.1"
+    helm:
+      releaseName: mimir
+      values: |
+        mimir:
+          structuredConfig:
+            multitenancy_enabled: false
+
+        distributor:
+          replicas: 1
+
+        ingester:
+          replicas: 1
+          persistentVolume:
+            enabled: true
+            size: 512Mi
+
+        querier:
+          replicas: 1
+
+        query_frontend:
+          replicas: 1
+
+        store_gateway:
+          replicas: 1
+          persistentVolume:
+            enabled: true
+            size: 512Mi
+
+        compactor:
+          replicas: 1
+          persistentVolume:
+            enabled: true
+            size: 512Mi
+
+        ruler:
+          enabled: false
+
+        alertmanager:
+          enabled: false
+
+        nginx:
+          enabled: true
+          replicas: 1
+
+        minio:
+          enabled: true
+
+        rollout_operator:
+          enabled: false
+
+        admin-cache:
+          enabled: false
+        chunks-cache:
+          enabled: false
+        index-cache:
+          enabled: false
+        metadata-cache:
+          enabled: false
+        results-cache:
+          enabled: false
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - ServerSideApply=true
