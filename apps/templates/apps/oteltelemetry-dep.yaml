@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/omkarsingad/modules.git
     targetRevision: main
-    path: apps/appfortelemetry  # Your folder
+    path: opentelemetry/chart/template  
   destination:
     server: https://kubernetes.default.svc
-    namespace: observability    # Your NS
+    namespace: observability   
   syncPolicy:
     automated:
       prune: true
