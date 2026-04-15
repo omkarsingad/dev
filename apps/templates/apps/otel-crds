@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel-crds
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/open-telemetry/opentelemetry-operator.git
+    targetRevision: HEAD
+    path: config/crd/bases
+    directory:
+      include: |
+        opentelemetry.io_opentelemetrycollectors.yaml
+        opentelemetry.io_instrumentations.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - ServerSideApply=true
