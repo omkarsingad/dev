@@ -15,10 +15,6 @@ spec:
         crds:
           create: false
 
-        manager:
-          serviceAccount:
-            create: true
-
   destination:
     server: https://kubernetes.default.svc
     namespace: opentelemetry-operator-system
