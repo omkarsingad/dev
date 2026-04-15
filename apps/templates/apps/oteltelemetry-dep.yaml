@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/omkarsingad/modules.git
     targetRevision: main
-    path: opentelemetry/chart/template  
+    path: opentelemetry/chart/templates
   destination:
     server: https://kubernetes.default.svc
     namespace: observability   
