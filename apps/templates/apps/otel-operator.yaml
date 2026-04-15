@@ -14,7 +14,7 @@ spec:
         manager:
           collectorImage:
             repository: otel/opentelemetry-collector-k8s
-            tag: "0.112.0"  # Latest stable
+            tag: "0.148.0"  # Latest stable
         admissionWebhooks:
           certManager:
             enabled: false
